@@ -21,7 +21,7 @@ public class LogEventMonitor {
     {
         group = new NioEventLoopGroup();
         bootstrap = new Bootstrap();
-        bootstrap.group(group).channel(NioDatagramChannel.class).option(ChannelOption.SO_BROADCAST,true).remoteAddress(socketAddress).handler(new ChannelInitializer<Channel>() {
+        bootstrap.group(group).channel(NioDatagramChannel.class).option(ChannelOption.SO_BROADCAST,true).localAddress(socketAddress).handler(new ChannelInitializer<Channel>() {
             @Override
             protected void initChannel(Channel ch) throws Exception {
                 ChannelPipeline pipeline = ch.pipeline();
@@ -43,7 +43,7 @@ public class LogEventMonitor {
 
     public static void main(String[] args)
     {
-        int port = 8888;
+        int port = 9999;
         if(args.length ==1)
         {
             port = Integer.parseInt(args[0]);
