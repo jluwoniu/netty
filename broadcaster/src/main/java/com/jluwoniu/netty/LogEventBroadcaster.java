@@ -61,14 +61,14 @@ public class LogEventBroadcaster {
                 poionter = randomAccessFile.getFilePointer();
                 randomAccessFile.close();
             }
-            /*try {
+            try {
                 Thread.sleep(1000);
             }
             catch (InterruptedException e)
             {
                 Thread.interrupted();
                 break;
-            }*/
+            }
         }
     }
 
